@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looping Timer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Picture-in-Picture Widget -->
+    <div class="pip-container" id="pipWidget">
+        <div class="pip-header">
+            <div class="pip-title">⏰ Timer</div>
+            <button class="pip-close" id="pipClose">×</button>
+        </div>
+        <div class="pip-display" id="pipDisplay">00:00:00</div>
+        <div class="pip-loops">
+            Loops: <span class="count" id="pipLoopCount">0</span>
+        </div>
+        <div class="pip-buttons">
+            <button class="pip-start" id="pipStartBtn">Start</button>
+            <button class="pip-stop" id="pipStopBtn" style="display: none;">Stop</button>
+            <button class="pip-reset" id="pipResetBtn">Reset</button>
+        </div>
+        <div class="pip-status" id="pipStatus"></div>
+    </div>
+
+    <div class="container">
+        <h1>⏰ Looping Timer</h1>
+        
+        <div class="input-group">
+            <div class="input-wrapper">
+                <label>Hours</label>
+                <input type="number" id="hours" min="0" max="23" value="0">
+            </div>
+            <div class="input-wrapper">
+                <label>Minutes</label>
+                <input type="number" id="minutes" min="0" max="59" value="1">
+            </div>
+            <div class="input-wrapper">
+                <label>Seconds</label>
+                <input type="number" id="seconds" min="0" max="59" value="0">
+            </div>
+        </div>
+
+        <div class="display" id="display">00:01:00</div>
+
+        <div class="buttons">
+            <button class="start-btn" id="startBtn">Start</button>
+            <button class="stop-btn" id="stopBtn" disabled>Stop</button>
+            <button class="reset-btn" id="resetBtn">Reset</button>
+        </div>
+
+        <div class="status" id="status"></div>
+
+        <div class="loop-counter">
+            <div>🔄 Loops Completed</div>
+            <span class="count" id="loopCount">0</span>
+        </div>
+
+        <div class="volume-control">
+            <label>🔊 Beep Volume</label>
+            <input type="range" id="volumeSlider" class="volume-slider" min="0" max="100" value="30">
+            <div class="volume-value" id="volumeValue">30%</div>
+        </div>
+
+        <div class="sound-control">
+            <label>🎵 Timer Sound</label>
+            <div class="sound-options">
+                <button class="sound-btn active" id="beepBtn">Default Beep</button>
+                <button class="sound-btn" id="customBtn">Custom Sound</button>
+            </div>
+            <div class="file-upload" id="fileUploadSection" style="display: none;">
+                <input type="file" id="soundFile" accept="audio/*">
+                <label for="soundFile">
+                    <div class="file-upload-btn">📁 Choose Audio File</div>
+                </label>
+                <div class="file-name" id="fileName"></div>
+            </div>
+            <button class="test-sound-btn" id="testSound">🔊 Test Sound</button>
+        </div>
+    </div>
+</body>
+</html>
